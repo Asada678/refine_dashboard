@@ -22,12 +22,12 @@ const CreateProperty = () => {
         fileReader.readAsDataURL(readFile);
       });
 
-    reader(file).then((result: string) =>
+    reader(file).then((result: string) => {
       setPropertyImage({
         name: file?.name,
         url: result,
-      })
-    );
+      });
+    });
   };
   const onFinishHandler = async (data: FieldValues) => {
     if (!propertyImage.name) return alert("Please select an image");
